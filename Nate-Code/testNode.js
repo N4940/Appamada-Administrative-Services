@@ -12,6 +12,6 @@ con.connect(function(err) {
   if (err) throw err;
   con.query("SELECT * FROM table1", function (err, result, fields) {
     if (err) throw err;
-    console.log(result);
+    console.log(JSON.parse(JSON.stringify(result)));
   });
 });
