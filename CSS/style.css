@@ -37,3 +37,18 @@ body .NAV li:hover{
     width: 100%;
     overflow: hidden;
 }
+.attendanceTable{
+    border-collapse:collapse;
+ 
+}
+.attendanceTable td{
+    padding: 5px 10px 5px 3px;
+    border: 1px solid rgb(111, 111, 111);    
+    background-color: rgba(60, 60, 60);
+}
+.attendanceTable th{
+    padding: 5px 10px 5px 3px;
+    text-align: left;
+    border: 2px solid rgb(161, 161, 161);  
+    background-color: rgb(90, 90, 90);
+}
