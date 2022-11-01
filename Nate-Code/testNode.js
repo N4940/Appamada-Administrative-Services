@@ -8,10 +8,9 @@ var con = mysql.createConnection({
   port: "3306"
 });
 
-con.connect(function(err) {
-  if (err) throw err;
-  con.query("SELECT * FROM table1", function (err, result, fields) {
-    if (err) throw err;
-    console.log(JSON.parse(JSON.stringify(result)));
-  });
+con.query("SELECT pStatus FROM table1 WHERE pName = 'Nate'", function (err, rows) {
+  for (var i = 0; i < rows.length; i++) {
+    var row = rows[i];
+    console.log(row.pStatus);
+}
 });
