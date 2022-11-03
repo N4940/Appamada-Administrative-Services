@@ -11,7 +11,7 @@ var con = mysql.createConnection({
 con.query("SELECT * FROM teacher_list", function (err, rows) {
   for (var i = 0; i < rows.length; i++) {
     var row = rows[i];
-    console.log("<li value=\""+ i++ +"\"> <img src=\"/images/WaterDroplet.png\" alt=\"imageofAccountIcon\"> <button>" + row.COL1 + "</button></li>")
+    console.log("<li value=\""+ i +"\"> <img src=\"/images/WaterDroplet.png\" alt=\"imageofAccountIcon\"> <button>" + row.COL1 + "</button></li>")
 }
 process.exit(0);
 });
