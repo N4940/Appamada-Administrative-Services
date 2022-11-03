@@ -12,5 +12,6 @@ con.query("SELECT pStatus FROM table1 WHERE pName = 'Nate'", function (err, rows
   for (var i = 0; i < rows.length; i++) {
     var row = rows[i];
     console.log(row.pStatus);
+    process.exit(0);
 }
 });
