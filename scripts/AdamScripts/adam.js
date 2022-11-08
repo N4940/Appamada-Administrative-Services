@@ -11,32 +11,77 @@ var con = mysql.createConnection({
 
 function getTeachers(){
 
-var x = "'Teacher'"
+    var x = "'Teacher'"
 
-con.query("SELECT pname FROM people WHERE pstatus = " + x, function (err, rows) {
-  for (var i = 0; i < rows.length; i++) {
-    var row = rows[i];
-    console.log(row.pname);
+    con.query("SELECT pname FROM people WHERE pstatus = " + x, function (err, rows) {
+      for (var i = 0; i < rows.length; i++) {
+        var row = rows[i];
+        console.log(row.pname);
 }
+process.exit(0);
 });
 }
 
 
 function getClasses(Teacher){
 
-    
-    con.query("SELECT cname FROM classes WHERE cteacher = \""+Teacher+"\"", function (err, rows) {
-      for (var i = 0; i < rows.length; i++) {
-        var row = rows[i];
-        console.log(row.cname);
+    var x = Teacher;
+
+    if (x == "Everyone"){
+            
+        con.query("SELECT cname FROM classes", function (err, rows) {
+            for (var i = 0; i < rows.length; i++) {
+            var row = rows[i];
+            console.log(row.cname);
+        }
+        process.exit(0);
+        }
+
+    )} 
+    else {
+            con.query("SELECT cname FROM classes WHERE cteacher = \""+Teacher+"\"", function (err, rows) {
+            for (var i = 0; i < rows.length; i++) {
+            var row = rows[i];
+            console.log(row.cname);
+        }
+        process.exit(0);
+        });
     }
-    process.exit(0);
-    });
+    
+    
+
+}
+
+function getroster(cname){
+
+    
+    con.query("SELECT pname FROM "+cname, function (err, rows) {
+        for (var i = 0; i < rows.length; i++) {
+          var row = rows[i];
+          console.log(row.cname);
+      }
+      process.exit(0);
+      });  
 
 
 }
 
 
+function createattendancetables(classlist){
 
 
-getClasses("Adam")
+    
+    con.query("CREATE TABLE "+cname, function (err, rows) {
+        for (var i = 0; i < rows.length; i++) {
+          var row = rows[i];
+          console.log(row.cname);
+      }
+      process.exit(0);
+      });  
+
+
+
+
+}
+
+getClasses("Everyone")
