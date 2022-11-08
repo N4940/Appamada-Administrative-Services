@@ -8,10 +8,10 @@ var con = mysql.createConnection({
   port: "3306"
 });
 
-con.query("SELECT pStatus FROM table1 WHERE pName = 'Nate'", function (err, rows) {
+con.query("SELECT * FROM teacher_list", function (err, rows) {
   for (var i = 0; i < rows.length; i++) {
     var row = rows[i];
-    console.log(row.pStatus);
-    process.exit(0);
+    console.log("<li value=\""+ i++ +"\"> <img src=\"/images/WaterDroplet.png\" alt=\"imageofAccountIcon\"> <button>" + row.COL1 + "</button></li>")
 }
+process.exit(0);
 });
