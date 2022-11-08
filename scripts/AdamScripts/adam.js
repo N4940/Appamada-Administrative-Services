@@ -32,8 +32,9 @@ function getClasses(Teacher){
         con.query("SELECT cname FROM classes", function (err, rows) {
             for (var i = 0; i < rows.length; i++) {
             var row = rows[i];
-            console.log(row.cname);
+            //console.log(row.cname);
         }
+        return rows;
         process.exit(0);
         }
 
@@ -67,21 +68,21 @@ function getroster(cname){
 }
 
 
-function createattendancetables(classlist){
+function createattendancetables(){
 
-
+    const classlist = getClasses("Everyone")
     
-    con.query("CREATE TABLE "+cname, function (err, rows) {
-        for (var i = 0; i < rows.length; i++) {
-          var row = rows[i];
-          console.log(row.cname);
-      }
+    for (var i = 0; i < classlist.length; i++) {
+        con.query("CREATE TABLE "+classlist.cname, function (err, rows) {
+            for (var i = 0; i < rows.length; i++) {
+                var row = rows[i];
+                console.log(row.cname);
+            }
+      
       process.exit(0);
-      });  
-
-
-
-
+      });
+    }
 }
 
-getClasses("Everyone")
+//getClasses("Everyone")
+createattendancetables();
