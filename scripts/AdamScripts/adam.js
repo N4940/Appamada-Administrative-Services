@@ -72,8 +72,8 @@ function createattendancetables(){
 
     const classlist = getClasses("Everyone")
     
-    for (var i = 0; i < classlist.length; i++) {
-        con.query("CREATE TABLE "+classlist.cname, function (err, rows) {
+    for (var x = 0; x < classlist.length; x++) {
+        con.query("CREATE TABLE "+classlist[x].cname, function (err, rows) {
             for (var i = 0; i < rows.length; i++) {
                 var row = rows[i];
                 console.log(row.cname);
