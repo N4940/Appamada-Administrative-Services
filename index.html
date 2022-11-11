@@ -4,8 +4,10 @@
         <meta charset = "UTF-8">
         <meta name="viewport" content="width=display-width, initial-scale=1.0">
         <link rel="stylesheet" href="CSS/style.css">
+        <script defer src="/scripts/general.js"></script>
     </head>
     <body>
+        <div id = "overlay" class="active" ></div>
         <Header> 
             Appamada Admin Site BETA!!
         </Header>
@@ -23,18 +25,20 @@
                 lorem ipsum
             </li>
         </ul>
-        <div class = "accountSelectModal">
+        
+        <button data-popup-opener="#accountselect">OpenTeachers</button>
+        
+        <div data-popup class = "accountSelectModal active" id="accountselect">
             <p>
                 accounts
             </p>
-            <ol class = "accountsView">
-                <li value="1"> <img src="/images/WaterDroplet.png" alt="imageofAccountIcon"> <button>DAVE</button></li>
-                <li value="2"> <img src="/images/WaterDroplet.png"" alt="imageofAccountIcon"> <button>ADAM</button></li>
-                <li value="3"> <img src="/images/WaterDroplet.png"" alt="imageofAccountIcon"> <button>DAVY</button></li>
-                <li value="4"> <img src="/images/WaterDroplet.png"" alt="imageofAccountIcon"> <button>NAPA</button></li>
-                <li value="5"> <img src="/images/WaterDroplet.png"" alt="imageofAccountIcon"> <button>NATE</button></li>
+            <ol data-teacher-list class = "accountsView">
+                <li value="1"> <button onclick = "location.href = 'pages/classGallery.html'" ><img src="/images/WaterDroplet.png" alt="imageofAccountIcon"> <p>DAVE</p> </button> </li>
+                <li value="2"> <button onclick = "location.href = 'pages/classGallery.html'" ><img src="/images/WaterDroplet.png" alt="imageofAccountIcon"> <p>ADAM</p> </button> </li>
+                <li value="3"> <button onclick = "location.href = 'pages/classGallery.html'" ><img src="/images/WaterDroplet.png" alt="imageofAccountIcon"> <p>DAVY</p> </button> </li>
+                <li value="4"> <button onclick = "location.href = 'pages/classGallery.html'" ><img src="/images/WaterDroplet.png" alt="imageofAccountIcon"> <p>NAPA</p> </button> </li>
+                <li value="5"> <button onclick = "location.href = 'pages/classGallery.html'" ><img src="/images/WaterDroplet.png" alt="imageofAccountIcon"> <p>NATE</p> </button> </li>
             </ol>
         </div>
-
     </body>  
 </html>
