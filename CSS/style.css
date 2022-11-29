@@ -3,16 +3,19 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     color: rgb(210, 210, 210);
-    margin: 30px;
+    margin: 30px; 
     background-color: rgb(35, 35, 35)
 }
 a{
     color:rgb(255, 92, 195);
 }
-body .NAV li{
+#NAV{
+    list-style: none;
+}
+#NAV li{
     padding: 10px;
 }
-body .NAV li:hover{
+#NAV li:hover{
     color:blue;
 }
 
@@ -66,4 +69,67 @@ body .NAV li:hover{
     border: 2px solid rgb(161, 161, 161);  
     background-color: rgb(90, 90, 90);
 }
+
+
+
 /*account MODAL*/
+.accountSelectModal{
+    z-index: 10;
+    background-color: darkgrey;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 80vw;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 130ms;
+}
+.accountSelectModal.active{
+    opacity: 100;
+}
+#overlay{
+    margin: 0px;
+    padding: 0px;
+    top:0%;
+    left:0%;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0);
+    opacity: 0;
+    transition: 200ms;
+}
+#overlay.active{
+    z-index: 9;
+    opacity: .56;
+    pointer-events: all;
+}
+.accountSelectModal button{
+    border:none;
+    border-bottom: 1px solid rgb(111, 111, 111);
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color:rgba(255, 255, 255, 0.521); ;
+}
+.accountSelectModal button:hover{
+    background-color: rgba(234, 234, 234, 0.521);
+}
+.accountSelectModal img{
+    width: 35px;
+    margin: auto 10px auto 0px;
+}
+.accountSelectModal .accountsView{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding:0px ;
+    width:100%
+}
+.accountSelectModal .accountsView li{
+    width:100%;
+}

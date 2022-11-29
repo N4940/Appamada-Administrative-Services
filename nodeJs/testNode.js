@@ -11,7 +11,7 @@ var con = mysql.createConnection({
 con.query("SELECT * FROM table1", function (err, rows) {
   for (var i = 0; i < rows.length; i++) {
     var row = rows[i];
-    console.log(row.pStatus);
-    process.exit(0);
+    console.log(row.pName);
 }
+process.exit(0);
 });
