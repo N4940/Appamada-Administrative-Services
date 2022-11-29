@@ -70,7 +70,7 @@ function getroster(cname){
 
 function createattendancetables(){
 
-    const classlist = getClasses("Everyone")
+    var classlist = con.query("SELECT cname FROM classes", function (err, rows) {});
     
     for (var x = 0; x < classlist.length; x++) {
         con.query("CREATE TABLE "+classlist[x].cname, function (err, rows) {
