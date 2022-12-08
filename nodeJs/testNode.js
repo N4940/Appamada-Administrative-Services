@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: "sql9.freesqldatabase.com",
+  host: "localhost",
   user: "root",
   password: "root",
   database: "testdb",
